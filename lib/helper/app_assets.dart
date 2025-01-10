@@ -28,7 +28,14 @@ class StringConstants{
   static const String signup = "Sign UP";
   static const String register = "Register";
   static const String auth = "Authentication";
-  static const String notification = "Notification";
+  static const String fireStore = "FireStore";
+  static const String age = "Age";
+  static const String addData = "ADD DATA";
+  static const String firestoreDemo = "Cloud FireStore";
+  static const String crashlytics = "Crashlytics";
+  static const String crash = "Generate a Crash";
+
+
 
 
 }

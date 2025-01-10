@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../helper/colors.dart';
+
 class Background extends StatefulWidget {
   const Background({super.key});
 
@@ -17,7 +19,7 @@ class _BackgroundState extends State<Background> {
           width: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
+              colors: [Color(0xFF6A11CB), Color(0xFF2575FC),Color(0xFF833AC7)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),

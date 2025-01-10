@@ -60,9 +60,9 @@ class AppTextField extends StatelessWidget {
       this.isFilled = true,
       this.borderRadius = 0,
       this.borderColor = primaryColor,
-      this.fillColor = blackColor,
+      this.fillColor,
       this.labelText,
-      this.prefixColor = textFieldIconColor});
+      this.prefixColor = textFieldIconColor, required InputDecoration decoration});
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +86,7 @@ class AppTextField extends StatelessWidget {
           controller: controller,
           style: TextStyle(
             fontSize: Dimens.fontSize_18,
-            color: hintColor,
+            color: whiteColor,
             fontFamily: Fonts.regular,
           ),
           maxLines: maxLines ?? 1,
@@ -96,7 +96,7 @@ class AppTextField extends StatelessWidget {
           obscureText: obscureText!,
           decoration: InputDecoration(
               filled: isFilled,
-              fillColor: Theme.of(context).textTheme.labelSmall!.color,
+              fillColor: buttonBackground,
               contentPadding: contentPadding ??
                   EdgeInsets.only(
                     left: Dimens.padding_15,
@@ -108,38 +108,38 @@ class AppTextField extends StatelessWidget {
               hintStyle: TextStyle(
                   fontSize: Dimens.fontSize_18,
                   fontFamily: Fonts.regular,
-                  color: hintColor),
+                  color: whiteColor),
               labelText: labelText,
               labelStyle: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    fontFamily: Fonts.regular,
-                    letterSpacing: -0.1,
-                    fontSize: Dimens.fontSize_14,
-                    color: hintColor.withOpacity(0.24),
-                  ),
+                fontFamily: Fonts.regular,
+                letterSpacing: -0.1,
+                fontSize: Dimens.fontSize_14,
+                color: hintColor.withOpacity(0.24),
+              ),
               border: OutlineInputBorder(
                 borderRadius:
-                    BorderRadius.circular(maxLines == null ? borderRadius! : 6),
+                BorderRadius.circular(maxLines == null ? borderRadius! : 6),
                 borderSide: isFilled!
                     ? BorderSide.none
                     : BorderSide(width: 1.0, color: borderColor!),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius:
-                    BorderRadius.circular(maxLines == null ? borderRadius! : 6),
+                BorderRadius.circular(maxLines == null ? borderRadius! : 6),
                 borderSide: isFilled!
                     ? BorderSide.none
                     : BorderSide(width: 1.0, color: borderColor!),
               ),
               disabledBorder: OutlineInputBorder(
                 borderRadius:
-                    BorderRadius.circular(maxLines == null ? borderRadius! : 6),
+                BorderRadius.circular(maxLines == null ? borderRadius! : 6),
                 borderSide: isFilled!
                     ? BorderSide.none
                     : BorderSide(width: 1.0, color: borderColor!),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius:
-                    BorderRadius.circular(maxLines == null ? borderRadius! : 6),
+                BorderRadius.circular(maxLines == null ? borderRadius! : 6),
                 borderSide: isFilled!
                     ? BorderSide.none
                     : BorderSide(width: 1.0, color: borderColor!),
@@ -148,16 +148,16 @@ class AppTextField extends StatelessWidget {
                   (prefix == null
                       ? null
                       : Padding(
-                          padding:  EdgeInsets.only(
-                              left: Dimens.padding_10, top: Dimens.padding_10, bottom: Dimens.padding_10, right: Dimens.padding_6),
-                          child: SvgPicture.asset(
-                            prefix!,
-                            width: Dimens.width_30,
-                            height: Dimens.height_30,
-                            colorFilter:
-                                ColorFilter.mode(prefixColor!, BlendMode.srcIn),
-                          ),
-                        )),
+                    padding:  EdgeInsets.only(
+                        left: Dimens.padding_10, top: Dimens.padding_10, bottom: Dimens.padding_10, right: Dimens.padding_6),
+                    child: SvgPicture.asset(
+                      prefix!,
+                      width: Dimens.width_30,
+                      height: Dimens.height_30,
+                      colorFilter:
+                      ColorFilter.mode(prefixColor!, BlendMode.srcIn),
+                    ),
+                  )),
 
               suffixIcon: Padding(
                 padding: EdgeInsets.symmetric(horizontal: Dimens.padding_10),

@@ -1,6 +1,7 @@
+import 'package:firebase_features/screen/crashlytics.dart';
 import 'package:firebase_features/screen/home.dart';
 import 'package:firebase_features/screen/main_screen.dart';
-import 'package:firebase_features/screen/notification.dart';
+import 'package:firebase_features/screen/firestore.dart';
 import 'package:firebase_features/screen/signin_screen.dart';
 import 'package:firebase_features/screen/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,8 @@ class RoutesUri {
   static const String signIn = '/signIn';
   static const String main = '/main';
   static const String home = '/home';
-  static const String notification = '/notification';
+  static const String fireStore = '/firestore';
+  static const String crush = '/crashlytics';
 
 }
 
@@ -64,13 +66,23 @@ GoRouter appRouter() {
         ),
       ),
       GoRoute(
-        path: RoutesUri.notification,
+        path: RoutesUri.fireStore,
         pageBuilder: (context, state) => CustomTransitionPage(
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);
           },
           key: state.pageKey,
-          child: const NotificationScreen(),
+          child: const FirestoreScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RoutesUri.crush,
+        pageBuilder: (context, state) => CustomTransitionPage(
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          key: state.pageKey,
+          child: const CrashlyticsScreen(),
         ),
       ),
     ],

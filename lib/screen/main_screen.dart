@@ -39,9 +39,17 @@ class _MainScreenState extends State<MainScreen> {
               height: 20,
             ),
             AppButton(
-                label: StringConstants.notification,
+                label: StringConstants.fireStore,
                 onPressed: () {
-                  GoRouter.of(NavigationService.context!).go(RoutesUri.notification);
+                  GoRouter.of(NavigationService.context!).go(RoutesUri.fireStore);
+                }),
+            SizedBox(
+              height: 20,
+            ),
+            AppButton(
+                label: StringConstants.crashlytics,
+                onPressed: () {
+                  GoRouter.of(NavigationService.context!).go(RoutesUri.crush);
                 }),
           ],
         ),
