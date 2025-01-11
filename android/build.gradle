@@ -1,14 +1,13 @@
-buildscript {
+plugins {
+
+    // Add the dependency for the Google services Gradle plugin
+    id 'com.google.gms.google-services' version '4.4.2' apply false
+
+}
+allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://storage.googleapis.com/download.flutter.io' }
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.4' // Example Gradle Plugin
-        classpath 'com.google.gms:google-services:4.4.2' // For Firebase
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:3.0.2'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30' // Kotlin plugin (if needed)/ Firebase plugin
     }
 }
 
@@ -22,13 +21,4 @@ subprojects {
 
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
-}
-flutter {
-    source '..'  // This points to your Flutter project root, make sure this is correct
-}
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-            }
 }
